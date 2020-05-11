@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# ninja output
+out/
+
+# visual studio files
+.vs/
