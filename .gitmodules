@@ -1,3 +1,6 @@
 [submodule "LuaJIT"]
 	path = LuaJIT
 	url = https://github.com/Paramake/LuaJIT.git
+[submodule "sdl2"]
+	path = sdl2
+	url = https://github.com/Paramake/sdl2
