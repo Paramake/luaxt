@@ -14,6 +14,8 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_definitions("-DHAVE_LIBC")
+add_definitions("-DFORCE_STATIC_VCRT=ON")
 add_subdirectory(src)
 add_subdirectory(LuaJIT)
 add_subdirectory(SDL2)
