@@ -3,14 +3,22 @@
 #include <iostream>
 #include <lua.hpp>
 #include <SDL.h>
+
+#include "api/ApiBridge.h"
+
+#pragma comment(linker, "/subsystem:CONSOLE")
 #undef main
 
 class App 
 {
 private:
+    Renderer* renderer;
+    RenderCache* renderCache;
+
 	SDL_Window* window;
 	lua_State* L;
 
+    std::string getExePath();
 	double getDPIScale();
 
 	void createWindow();
@@ -22,6 +30,7 @@ public:
 
 	void start(int argc, char** argv);
 };
+
 
 inline const char* InitScript = R"MULTI(
 local core
@@ -39,6 +48,6 @@ end, function(err)
   if core and core.on_error then
     pcall(core.on_error, err)
   end
-  os.exit(1)
+  --os.exit(1)
 end)
 )MULTI";

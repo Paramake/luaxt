@@ -14,6 +14,8 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_definitions("-DSTB_TRUETYPE_IMPLEMENTATION")
+add_definitions("-DSTBTT_STATIC")
 add_definitions("-DHAVE_LIBC")
 add_definitions("-DFORCE_STATIC_VCRT=ON")
 add_subdirectory(src)
